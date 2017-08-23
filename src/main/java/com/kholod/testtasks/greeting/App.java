@@ -1,7 +1,5 @@
 package com.kholod.testtasks.greeting;
 
-import java.util.Locale;
-
 public class App {
 
     public static void main(String[] args) {
