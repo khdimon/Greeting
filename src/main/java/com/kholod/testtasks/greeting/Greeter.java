@@ -2,8 +2,11 @@ package com.kholod.testtasks.greeting;
 
 import java.time.LocalTime;
 import java.util.ResourceBundle;
+import org.apache.log4j.Logger;;
 
 public class Greeter {
+
+    private final static Logger logger = Logger.getLogger(Greeter.class);
 
     public static final LocalTime BEGIN_MORNING =
             LocalTime.of(6, 0);
@@ -15,6 +18,10 @@ public class Greeter {
             LocalTime.of(23, 0);
 
     public String getGreetingByTime(LocalTime currentTime) {
+
+        logger.info("Greeting for time " + currentTime
+                + " is requested");
+
         ResourceBundle RESOURCE_BUNDLE =
                 ResourceBundle.getBundle("messages");
 
