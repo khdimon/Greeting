@@ -37,9 +37,8 @@
                 <configuration>
                     <archive>
                         <manifest>
-                            <addClasspath>true</addClasspath>
-                            <classpathPrefix>lib/</classpathPrefix>
-                            <mainClass>com.kholod.testtasks.greeting.App
+                            <mainClass>
+                                com.kholod.testtasks.greeting.App
                             </mainClass>
                         </manifest>
                     </archive>
