@@ -1,6 +1,7 @@
 package com.kholod.testtasks.greeting;
 
 import java.time.LocalTime;
+import java.util.ResourceBundle;
 
 public class Greeter {
 
@@ -14,16 +15,19 @@ public class Greeter {
             LocalTime.of(23, 0);
 
     public String getGreetingByTime(LocalTime currentTime) {
+        ResourceBundle RESOURCE_BUNDLE =
+                ResourceBundle.getBundle("messages");
+
         if (currentTime.compareTo(BEGIN_NIGHT) >= 0
                 || currentTime.compareTo(BEGIN_MORNING) < 0) {
-            return "Good night, World!";
+            return RESOURCE_BUNDLE.getString("greeting.night");
         }
         if (currentTime.compareTo(BEGIN_EVENING) >= 0) {
-            return "Good evening, World!";
+            return RESOURCE_BUNDLE.getString("greeting.evening");
         }
         if (currentTime.compareTo(BEGIN_DAY) >= 0) {
-            return "Good day, World!";
+            return RESOURCE_BUNDLE.getString("greeting.day");
         }
-        return "Good morning, World!";
+        return RESOURCE_BUNDLE.getString("greeting.morning");
     }
 }
