@@ -14,6 +14,7 @@
         <java.version>1.8</java.version>
         <compiler.plugin.version>3.6.2</compiler.plugin.version>
         <jar.plugin.version>3.0.2</jar.plugin.version>
+        <javadoc.plugin.version>3.0.0-M1</javadoc.plugin.version>
         <junit.version>4.12</junit.version>
         <log4j.version>1.2.17</log4j.version>
     </properties>
@@ -43,6 +44,27 @@
                             </mainClass>
                         </manifest>
                     </archive>
+                </configuration>
+            </plugin>
+            <!-- Generate javadocs -->
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-javadoc-plugin</artifactId>
+                <version>${javadoc.plugin.version}</version>
+                <executions>
+                    <execution>
+                        <id>attach-javadocs</id>
+                        <phase>package</phase>
+                        <goals>
+                            <goal>javadoc</goal>
+                        </goals>
+                    </execution>
+                </executions>
+                <configuration>
+                    <reportOutputDirectory>
+                        ${project.build.directory}
+                    </reportOutputDirectory>
+                    <destDir>javadoc</destDir>
                 </configuration>
             </plugin>
         </plugins>
