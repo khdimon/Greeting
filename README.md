@@ -6,6 +6,6 @@ Also greeting message depends of default locale.
 ## Build and run the project
 
 1. Build the project with maven: `mvn clean package`
-1. Run the jar from project package:
+1. Run the jar:
 `java -jar target/kholod-testtasks-greeting-1.0-SNAPSHOT.jar`
 1. Javadocs is accessible at `target/javadoc`

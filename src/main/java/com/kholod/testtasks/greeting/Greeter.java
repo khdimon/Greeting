@@ -1,6 +1,7 @@
 package com.kholod.testtasks.greeting;
 
 import java.time.LocalTime;
+import java.time.format.DateTimeFormatter;
 import java.util.ResourceBundle;
 import org.apache.log4j.Logger;;
 
@@ -43,7 +44,8 @@ public class Greeter {
      */
     public String getGreetingByTime(LocalTime time) {
 
-        logger.info("Greeting for time " + time
+        logger.info("Greeting for time "
+                + time.format(DateTimeFormatter.ofPattern("HH:mm"))
                 + " is requested");
 
         ResourceBundle RESOURCE_BUNDLE =
