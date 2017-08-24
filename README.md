@@ -1,5 +1,7 @@
 # Greeting
 
+https://travis-ci.org/khdimon/Greeting.svg?branch=master
+
 This is the console application that prints greeting in depend of times of day.
 Also greeting message depends of default locale.
 
