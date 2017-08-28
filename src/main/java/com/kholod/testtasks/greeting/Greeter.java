@@ -3,6 +3,7 @@ package com.kholod.testtasks.greeting;
 import java.time.LocalTime;
 import java.time.format.DateTimeFormatter;
 import java.util.ResourceBundle;
+
 import org.apache.log4j.Logger;;
 
 /**
@@ -51,16 +52,16 @@ public class Greeter {
         ResourceBundle RESOURCE_BUNDLE =
                 ResourceBundle.getBundle("messages");
 
-        if (time.compareTo(BEGIN_NIGHT) >= 0
-                || time.compareTo(BEGIN_MORNING) < 0) {
+        if (time.isBefore(BEGIN_MORNING) || time.isAfter(BEGIN_NIGHT)
+                || time.equals(BEGIN_NIGHT)) {
             return RESOURCE_BUNDLE.getString("greeting.night");
         }
-        if (time.compareTo(BEGIN_EVENING) >= 0) {
-            return RESOURCE_BUNDLE.getString("greeting.evening");
+        if (time.isBefore(BEGIN_DAY)) {
+            return RESOURCE_BUNDLE.getString("greeting.morning");
         }
-        if (time.compareTo(BEGIN_DAY) >= 0) {
+        if (time.isBefore(BEGIN_EVENING)) {
             return RESOURCE_BUNDLE.getString("greeting.day");
         }
-        return RESOURCE_BUNDLE.getString("greeting.morning");
+        return RESOURCE_BUNDLE.getString("greeting.evening");
     }
 }

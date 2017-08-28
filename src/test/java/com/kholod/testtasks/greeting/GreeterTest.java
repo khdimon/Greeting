@@ -58,7 +58,7 @@ public class GreeterTest {
     public void getGreetingByTime_Day_ruRU() throws Exception {
         //Arrange
         Locale.setDefault(new Locale("ru", "RU"));
-        LocalTime time = LocalTime.of(11, 00);
+        LocalTime time = LocalTime.of(11, 0);
         Greeter greeter = new Greeter();
         String expectedMessage = "Добрый день, Мир!";
 
