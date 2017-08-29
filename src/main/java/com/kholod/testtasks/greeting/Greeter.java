@@ -49,19 +49,19 @@ public class Greeter {
                 + time.format(DateTimeFormatter.ofPattern("HH:mm"))
                 + " is requested");
 
-        ResourceBundle RESOURCE_BUNDLE =
+        ResourceBundle resourceBundle =
                 ResourceBundle.getBundle("messages");
 
         if (time.isBefore(BEGIN_MORNING) || time.isAfter(BEGIN_NIGHT)
                 || time.equals(BEGIN_NIGHT)) {
-            return RESOURCE_BUNDLE.getString("greeting.night");
+            return resourceBundle.getString("greeting.night");
         }
         if (time.isBefore(BEGIN_DAY)) {
-            return RESOURCE_BUNDLE.getString("greeting.morning");
+            return resourceBundle.getString("greeting.morning");
         }
         if (time.isBefore(BEGIN_EVENING)) {
-            return RESOURCE_BUNDLE.getString("greeting.day");
+            return resourceBundle.getString("greeting.day");
         }
-        return RESOURCE_BUNDLE.getString("greeting.evening");
+        return resourceBundle.getString("greeting.evening");
     }
 }
